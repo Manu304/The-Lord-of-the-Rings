@@ -3,7 +3,7 @@ package src.juego;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Tool {
+public class ToolMR {
     static Scanner scanner = new Scanner(System.in);
 
     private static void imprimirMensaje(String mensaje) {

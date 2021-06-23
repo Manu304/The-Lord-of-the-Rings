@@ -4,9 +4,8 @@ import src.personaje.Personaje;
 
 public class Heroe extends Personaje {
 
-    public Heroe(String nombre, int vida, int armadura) {
-        super(nombre, vida, armadura);
-        //TODO Auto-generated constructor stub
+    public Heroe(String nombre, int vida) {
+        super(nombre, vida);
     }
     
 }

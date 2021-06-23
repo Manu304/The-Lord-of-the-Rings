@@ -2,8 +2,8 @@ package src.personaje.heroes;
 
 public class Humano extends Heroe {
 
-    public Humano(String nombre, int vida, int armadura) {
-        super(nombre, vida, armadura);
+    public Humano(String nombre) {
+        super(nombre, 180);
         //TODO Auto-generated constructor stub
     }
     

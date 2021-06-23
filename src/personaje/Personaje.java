@@ -1,14 +1,16 @@
 package src.personaje;
 
+import src.juego.ToolMR;
+
 public class Personaje {
     private String nombre;
     private int vida, armadura;
 
 
-    public Personaje(String nombre, int vida, int armadura) {
+    public Personaje(String nombre, int vida) {
         this.nombre = nombre;
         this.vida = vida;
-        this.armadura = armadura;
+        this.armadura = ToolMR.aleatorio(50, 70);
     }
 
 
