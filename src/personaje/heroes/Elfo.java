@@ -13,6 +13,7 @@ public class Elfo extends Heroe {
     @Override
     public int atacar(int potencia, Personaje defensor) {
         if (defensor instanceof Orco) {
+            System.out.println(this.getNombre() + " ha usado rabia, su ataque aumenta a: " + rabia(potencia));
             return rabia(potencia);
         }else{
             return potencia;

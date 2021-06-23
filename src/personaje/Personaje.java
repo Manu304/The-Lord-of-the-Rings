@@ -37,8 +37,17 @@ public class Personaje {
         if (danio > this.armadura) {
             if (atacante instanceof Orco) {
                 defensa -= (int)(defensa*0.10);
+                System.out.println(this.nombre + " ha sido atacado por un Orco, su armadura se redujo temporalmente a: " + defensa);
             }
-            this.vida -= danio - defensa;
+            if (danio - defensa < this.vida) {
+                this.vida -= (danio - defensa);
+                System.out.println(atacante.getNombre() + " ha golpeado a " + this.getNombre() + " con potencia de: " + danio);
+            }else{
+                System.out.println("\n" + atacante.getNombre() + " ha matado a " + this.nombre + "!\n");
+                this.vida = 0;
+            }    
+        }else{
+            System.out.println("El ataque de " + atacante.getNombre() + " fue absorvido por la armadura de " + this.getNombre());
         }
     }
 
@@ -49,7 +58,15 @@ public class Personaje {
     public int getArmadura() {
         return armadura;
     }
+
     
+    
+    @Override
+    public int hashCode() {
+        return this.vida;
+    }
+
+
     @Override
     public String toString() {
         return nombre + "      " + vida + "       " + armadura + ToolMR.espacios(9) + especie;

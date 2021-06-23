@@ -9,8 +9,10 @@ import src.personaje.heroes.Humano;
 public class VectorHeroe {
     private final String[] nombres = {"MOR", "KRY", "PET", "HOL", "TRE", "LOP", "QUE", "KYT"};
     private Heroe[] ejercitoHeroes;
+    private int cantidad;
 
     public VectorHeroe(int cantidad){
+        this.cantidad = cantidad;
         ejercitoHeroes = new Heroe[cantidad];
         llenarEjercito();
     }
@@ -27,20 +29,25 @@ public class VectorHeroe {
         }
     }
 
+    public Heroe[] getLuchadores(){
+        Heroe[] luchadores = new Heroe[this.getCantVivos()];
+        int contador = 0;
+        for (int i = 0; i < luchadores.length || contador < this.getCantVivos(); i++) {
+            if (ejercitoHeroes[i].getVida() > 0) {
+                luchadores[contador] = ejercitoHeroes[i];
+                contador++;
+            }
+        }
+        return luchadores;
+    }
+
+    public int getCantVivos(){
+        return VectorPersonaje.getCantVivos(ejercitoHeroes);
+    }
+
     public void mostrarHeroes(){
         VectorPersonaje.mostrarEjercitos(ejercitoHeroes, "HEORES");
     }
-    /*
-    public void mostrarHeroes(){
-        System.out.println(ToolMR.margenes(16) + "EJERCITO DE HEROES" + ToolMR.margenes(16));
-        System.out.println("No.   NOMBRE      VIDA    ARMADURA     ESPECIE");
-        System.out.println(ToolMR.margenes(50));
-        for (int i = 0; i < ejercitoHeroes.length; i++) {
-            System.out.println((i+1) + "     " + ejercitoHeroes[i]);
-        }
-        System.out.println(ToolMR.margenes(50));
-    }
-    */
 
     public Heroe seleccionar(int indice){
         return ejercitoHeroes[indice];
@@ -48,5 +55,9 @@ public class VectorHeroe {
     
     public void quitarMuerto(){
         VectorPersonaje.eliminarVacios(ejercitoHeroes);
+    }
+
+    public int getCantidad(){
+        return this.cantidad;
     }
 }

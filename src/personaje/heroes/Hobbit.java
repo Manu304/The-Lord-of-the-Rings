@@ -13,6 +13,7 @@ public class Hobbit extends Heroe {
     @Override
     public int atacar(int potencia, Personaje defensor) {
         if (defensor instanceof Trasgo) {
+            System.out.println(this.getNombre() + " tuvo miedo del Trasgo, su ataque se reduce 5 puntos");
             return potencia - 5;
         } else {
             return potencia;

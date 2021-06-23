@@ -8,8 +8,10 @@ import src.personaje.bestias.Trasgo;
 public class VectorBestia {
     private Bestia[] ejercitoBestias;
     private final String[] nombres = {"PAL", "TRO", "MOT", "TAL", "REP", "YEK", "ZUP", "QUI"};
+    private int cantidad;
 
     public VectorBestia(int cantidad){
+        this.cantidad = cantidad;
         ejercitoBestias = new Bestia[cantidad];
         llenarEjercito();
     }
@@ -24,6 +26,22 @@ public class VectorBestia {
         }
     }
 
+    public Bestia[] getLuchadores(){
+        Bestia[] luchadores = new Bestia[this.getCantVivos()];
+        int contador = 0;
+        for (int i = 0; i < luchadores.length || contador < this.getCantVivos(); i++) {
+            if (ejercitoBestias[i].getVida() > 0) {
+                luchadores[contador] = ejercitoBestias[i];
+                contador++;
+            }
+        }
+        return luchadores;
+    }
+
+    public int getCantVivos(){
+        return VectorPersonaje.getCantVivos(ejercitoBestias);
+    }
+
     public void mostrarBestias(){
         VectorPersonaje.mostrarEjercitos(ejercitoBestias, "BESTIAS");
     }
@@ -34,5 +52,9 @@ public class VectorBestia {
 
     public void quitarMuerto(){
         VectorPersonaje.eliminarVacios(ejercitoBestias);
+    }
+
+    public int getCantidad(){
+        return this.cantidad;
     }
 }

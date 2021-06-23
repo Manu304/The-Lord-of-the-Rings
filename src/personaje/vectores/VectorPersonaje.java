@@ -41,5 +41,43 @@ public abstract class VectorPersonaje {
         System.out.println(ToolMR.margenes(50));
     }
 
+    public static int getCantVivos(Personaje[] ejercito){
+        int vivos = 0;
+        for (int i = 0; i < ejercito.length; i++) {
+            if (ejercito[i].getVida() > 0) {
+                vivos++;
+            }
+        }
+        return vivos;
+    }
+
+    public static <T> void ordenPorVida(T[] arreglo, boolean ascendente){
+        boolean cambio = true;
+        T selec = null;
+        int pos = 0;
+
+        for (int i = 0; i < arreglo.length; i++) {
+            selec = arreglo[i];
+            pos = i;
+
+            for (int j = i+1; j < arreglo.length; j++) {
+                
+                if (ascendente) {
+                    cambio = selec.hashCode() > arreglo[j].hashCode();
+                    
+                }else{
+                    cambio = selec.hashCode() < arreglo[j].hashCode();
+                }
+                if (cambio){
+                    selec = arreglo[j];
+                    pos = j;
+                }
+            }
+            arreglo[pos] = arreglo[i];
+            arreglo[i] = selec;
+        }
+
+    }
+
     
 }
