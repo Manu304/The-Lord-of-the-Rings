@@ -48,4 +48,9 @@ public class Personaje {
         return armadura;
     }
     
+    @Override
+    public String toString() {
+        return nombre + " Vida: " + vida + "Armadura: " + armadura;
+    }   
+    
 }
