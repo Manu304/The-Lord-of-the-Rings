@@ -40,10 +40,10 @@ public class Personaje {
         }
     }
 
-    public int atacar(Personaje defensor){
-        return ToolMR.aleatorio(0, 100);
+    public int atacar(int potencia, Personaje defensor){
+        return potencia;
     }
-    
+
     public int getArmadura() {
         return armadura;
     }
