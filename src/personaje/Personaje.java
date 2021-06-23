@@ -1,6 +1,7 @@
 package src.personaje;
 
 import src.juego.ToolMR;
+import src.personaje.bestias.Orco;
 
 public class Personaje {
     private String nombre;
@@ -29,18 +30,22 @@ public class Personaje {
     }
 
 
-    public void setVida(int vida) {
-        this.vida = vida;
+    public void setVida(int danio, Personaje atacante) {
+        int defensa = this.armadura;
+        if (danio > this.armadura) {
+            if (atacante instanceof Orco) {
+                defensa -= (int)(defensa*0.10);
+            }
+            this.vida -= danio - defensa;
+        }
     }
 
-
+    public int atacar(Personaje defensor){
+        return ToolMR.aleatorio(0, 100);
+    }
+    
     public int getArmadura() {
         return armadura;
-    }
-
-
-    public void setArmadura(int armadura) {
-        this.armadura = armadura;
     }
     
 }
