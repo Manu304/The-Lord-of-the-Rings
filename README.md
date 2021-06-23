@@ -8,12 +8,12 @@ El objetivo del juego es la creación de dos ejercitos de personajes, uno de her
 seenfrentaran entre ellos, mediante un sistema de turnos, hasta que uno de ellos logre la victoria.
 ## Compilación con ant
 Se utiliza el archivo build.xml y se ejecutan los comandos:
-- 'ant compile' Se compila el codigo fuente
-- 'ant jar' Se empaquetan los archivos compilados en un jar
-- 'ant run' Se ejecuta el jar generado por ant
+- `ant compile` Se compila el codigo fuente
+- `ant jar` Se empaquetan los archivos compilados en un jar
+- `ant run` Se ejecuta el jar generado por ant
 ## Ejecutando JAR en consola
 Dentro de la capeta del archivo se ejecuta:
-'''
+```
 java -jar ./dist/lib/The-Lord-of-the-Rings.jar
-'''
+```
 
