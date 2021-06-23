@@ -20,7 +20,7 @@ public class Partida {
         while (bestias.getCantVivos() > 0 && heroes.getCantVivos() > 0) {
             System.out.println("\n" + ToolMR.margenes(20) + "ROUND " + contadorRound + ToolMR.margenes(20));
             rondaPelea();
-            System.out.println(ToolMR.margenes(5) + "DATOS DE PERSONAJES LUEGO DEL ROUND" + contadorRound + ToolMR.margenes(5));
+            System.out.println("\n" + ToolMR.margenes(5) + "DATOS DE PERSONAJES LUEGO DEL ROUND" + contadorRound + ToolMR.margenes(5));
             bestias.mostrarBestias();
             heroes.mostrarHeroes();
             contadorRound++;
