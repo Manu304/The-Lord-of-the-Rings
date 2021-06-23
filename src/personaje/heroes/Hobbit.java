@@ -5,7 +5,7 @@ import src.personaje.bestias.Trasgo;
 
 public class Hobbit extends Heroe {
 
-    public Hobbit(String nombre, int vida) {
+    public Hobbit(String nombre) {
         super(nombre, 200);
     }
 

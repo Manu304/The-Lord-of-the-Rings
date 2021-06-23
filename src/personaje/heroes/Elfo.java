@@ -5,7 +5,7 @@ import src.personaje.bestias.Orco;
 
 public class Elfo extends Heroe {
 
-    public Elfo(String nombre, int vida) {
+    public Elfo(String nombre) {
         super(nombre, 250);
     }
 
