@@ -67,4 +67,12 @@ public class ToolMR {
         }
         return espacio;
     }
+
+    public static String margenes(int cantidad) {
+        String guiones = "";
+        for (int i = 0; i < cantidad; i++) {
+            guiones += "-";
+        }
+        return guiones;
+    }
 }

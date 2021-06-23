@@ -6,12 +6,14 @@ import src.personaje.bestias.Orco;
 public class Personaje {
     private String nombre;
     private int vida, armadura;
+    private Especie especie;
 
 
-    public Personaje(String nombre, int vida) {
+    public Personaje(String nombre, int vida, Especie especie) {
         this.nombre = nombre;
         this.vida = vida;
         this.armadura = ToolMR.aleatorio(50, 70);
+        this.especie = especie;
     }
 
 
@@ -50,7 +52,11 @@ public class Personaje {
     
     @Override
     public String toString() {
-        return nombre + " Vida: " + vida + "Armadura: " + armadura;
-    }   
+        return nombre + "      " + vida + "       " + armadura + ToolMR.espacios(9) + especie;
+    }
     
+    //No.   NOMBRE      VIDA    ARMADURA     ESPECIE
+    //1     TROCRA      350       70         HUMANO
+    //2     POMROC      150       50          TRASGO
+    //3     PROGTRA     123       66          HUMANO  
 }

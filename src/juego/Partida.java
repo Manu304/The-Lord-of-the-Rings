@@ -4,11 +4,12 @@ import src.personaje.vectores.VectorBestia;
 import src.personaje.vectores.VectorHeroe;
 
 public class Partida {
-    VectorBestia bestias = new VectorBestia(5);
-    VectorHeroe heroes = new VectorHeroe(5);
+    private VectorBestia bestias;
+    private VectorHeroe heroes;
     
-    public Partida(){
-
+    public Partida(VectorBestia bestias, VectorHeroe heroes){
+        this.bestias = bestias;
+        this.heroes = heroes;
     }
 
     private int tirarDado(int cantidad, int min, int max){
