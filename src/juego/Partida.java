@@ -23,6 +23,7 @@ public class Partida {
             System.out.println("\n" + ToolMR.margenes(5) + "DATOS DE PERSONAJES LUEGO DEL ROUND" + contadorRound + ToolMR.margenes(5));
             bestias.mostrarBestias();
             heroes.mostrarHeroes();
+            String sigue = ToolMR.getTextoSimple("cualquier tecla para continuar");
             contadorRound++;
         }
         if (bestias.getCantVivos() == 0) {
